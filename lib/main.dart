@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:url_launcher/url_launcher.dart';
+import 'dart:html' as html;
 
 void main() {
   runApp(const MyApp());
@@ -104,11 +105,6 @@ class MyHomePage extends StatelessWidget {
   }
 
   _goToPuzzle() async {
-    const url = 'puzzle.ahmedsalem.link';
-    if (await canLaunch(url)) {
-      await launch(url);
-    } else {
-      throw 'Could not launch $url';
-    }
+    html.window.open('http://puzzle.ahmedsalem.link', 'Puzzle');
   }
 }
